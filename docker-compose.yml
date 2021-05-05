@@ -1,0 +1,12 @@
+version: "3"
+services:
+  notebook:
+    # https://hub.docker.com/r/jupyter/datascience-notebook
+    image: jupyter/datascience-notebook
+    ports:
+      - "8888:8888"
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+    volumes:
+      - ./hiyoko:/home/jovyan
+    command: start-notebook.sh --NotebookApp.token=''
